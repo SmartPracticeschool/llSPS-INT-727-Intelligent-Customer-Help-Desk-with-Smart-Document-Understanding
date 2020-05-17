@@ -2,147 +2,9 @@
     {
         "id": "e33fd96c.b1f498",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Flow 1",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "5e75ce40.2a426",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Intelligent Customer Help Desk With Smart Document Understanding",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "d0a6c0ac.8980d",
-        "type": "ui_group",
-        "z": "",
-        "name": "Chatbox",
-        "tab": "5e75ce40.2a426",
-        "order": 1,
-        "disp": true,
-        "width": "10",
-        "collapse": false
-    },
-    {
-        "id": "2f3470e2.aaa38",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-dark",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#3da9ae",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#097479",
-                    "value": "#3da9ae",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#3da9ae",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#6cc7cb",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#555555",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#eeeeee",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#3da9ae",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "cyan",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "dark"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "none",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "ff862856.2e9e98",
-        "type": "ui_group",
-        "z": "",
-        "name": "Bot Response",
-        "tab": "5e75ce40.2a426",
-        "order": 2,
-        "disp": true,
-        "width": "15",
-        "collapse": false
-    },
-    {
-        "id": "ed2a8b84.06ca38",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "d0a6c0ac.8980d",
-        "order": 3,
-        "width": 10,
-        "height": "8"
     },
     {
         "id": "4719271e.f67278",
@@ -235,7 +97,7 @@
         "type": "function",
         "z": "e33fd96c.b1f498",
         "name": "",
-        "func": "msg.payload.text=\"\"; \nif(msg.payload.context.webhook_result_1)\n{ \n    for(var i in msg.payload.context.webhook_result_1.results)\n    { \n        msg.payload.text=msg.payload.text+\"<br>\"+msg.payload.context.webhook_result_1.results[i].subtitle;\n        msg.payload.text=msg.payload.text+\"<br><br>\"+msg.payload.context.webhook_result_1.results[i].text; \n    } \n    msg.payload=msg.payload.text; \n    \n} \nelse \nmsg.payload = msg.payload.output.text[0];\nreturn msg; ",
+        "func": "msg.payload.text=\"\"; \nif(msg.payload.context.webhook_result_1)\n{ \n    for(var i in msg.payload.context.webhook_result_1.results)\n    { \n        msg.payload.text=msg.payload.text+\"<br>\"+msg.payload.context.webhook_result_1.results[i].subtitle;\n        msg.payload.text=msg.payload.text+\"<br><br>\"+msg.payload.context.webhook_result_1.results[i].text+\"<br>\"; \n    } \n    msg.payload=msg.payload.text; \n    \n} \nelse \nmsg.payload = msg.payload.output.text[0];\nreturn msg; ",
         "outputs": 1,
         "noerr": 0,
         "x": 970,
@@ -415,5 +277,36 @@
                 "f09213bd.f0c9b"
             ]
         ]
+    },
+    {
+        "id": "d0a6c0ac.8980d",
+        "type": "ui_group",
+        "z": "",
+        "name": "Chatbox",
+        "tab": "5e75ce40.2a426",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "ff862856.2e9e98",
+        "type": "ui_group",
+        "z": "",
+        "name": "Bot Response",
+        "tab": "5e75ce40.2a426",
+        "order": 2,
+        "disp": true,
+        "width": "15",
+        "collapse": false
+    },
+    {
+        "id": "5e75ce40.2a426",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Intelligent Customer Help Desk With Smart Document Understanding",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     }
 ]
