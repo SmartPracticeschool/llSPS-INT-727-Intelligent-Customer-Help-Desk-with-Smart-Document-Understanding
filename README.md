@@ -12,4 +12,4 @@ In Watson Discovery I have used the ecobee3_userguide.
 
 Node-Red Dashboard link after deploying : https://node-red-wnbgt.eu-gb.mybluemix.net/ui/
 
-Youtube video link is : 
+Youtube video link is : https://youtu.be/D98KYzkotVk
